@@ -1,0 +1,107 @@
+.navig{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.me-auto{
+    align-items: center;
+}
+
+.navbar-collapse{
+    background-color: chocolate;
+}
+
+.navbar-brand{
+    display: flex;
+}
+
+.navbar-brand h6{
+    padding: 13px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.navbar-toggler span{
+    color: White;
+}
+
+.content{
+    height: 700px;
+}
+
+.home_page{
+    background: url(../images/bkfc.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 50% 0px;
+    height: 700px;
+    padding: 100px;
+}
+
+.action_part{
+    margin-top: 50px;
+    background-color: white;
+    padding: 20px;
+    filter:Alpha(opacity=90);-moz-opacity:0.90;opacity: 0.90;
+}
+
+.action_part h2{
+    font-weight: 700;
+    padding: 20px;
+}
+
+
+
+.action_part button{
+    background-color: #E65100;
+    margin-top: 20px;
+    border: none;
+    height: 60px;
+    padding: 20px;
+    width: 80%;
+    color: white;
+    transition: 0.3s ease-in-out;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.action_part button:hover{
+    background-color:#43A047;
+}
+
+@media screen and (max-width: 769px){
+    .action_part button{
+        padding: 0;
+        width: 100%;
+    }
+    .action_part{
+        margin-top: 200px;
+        background-color: white;
+        padding: 10px;
+    }
+    .home_page{
+        padding: 10px;
+    }
+    .navbar-brand h6{
+        display: none;
+    }
+
+}
+
+
+/*bouton mon compte*/
+.monCompte{
+    margin-top: 50px;
+}
+
+.monCompte button{
+    padding: 10px;
+    border: none;
+    background-color: #43A047;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.monCompte button:hover{
+    background-color: #E65100;
+}

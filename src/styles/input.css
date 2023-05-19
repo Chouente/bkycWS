@@ -1,0 +1,11 @@
+.input_filter input{
+    border: 1px solid green;
+    height: 40px;
+    border-radius: 0.3rem;
+    padding: 2px;
+    font-size: 15px;
+}
+
+.bouton_part button{
+    margin: 3px;
+}

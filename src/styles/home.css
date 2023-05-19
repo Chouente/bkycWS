@@ -1,0 +1,39 @@
+
+
+.from_control{
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.from_control label{
+    font-size: 12px;
+    width: 100%;
+}
+
+.from_control input{
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #CFD8DC !important;
+    border-radius: 2px;
+    background-color: transparent;
+    font-size: 13px;
+}
+
+.from_control input button{
+    background-color: green;
+}
+
+.from_control select{
+    height: 40px;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #CFD8DC;
+    border-radius: 2px;
+    background-color: transparent;
+    font-size: 13px;
+}
+
+.bouton_style{
+    margin: 45px 10px 10px 10px;
+}

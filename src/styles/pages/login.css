@@ -1,0 +1,136 @@
+.login_page{
+    background-color: #43A047;
+    height: 100vh;
+    padding: 80px;
+}
+
+.register_page{
+    background-color: #43A047;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login_content{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+}
+
+.login_content .left{
+    background: url(../../images/Login.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: 50% 0px;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.login_content .right{
+    padding: 30px;
+}
+
+.login_content .right h1{
+    font-weight: 600;
+    color: #E65100;
+    margin: 20px;
+}
+
+.form_control{
+    margin-top: 20px;
+}
+
+.form_control input{
+    padding: 5px;
+    background-color: #CFD8DC;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form_control label{
+    padding: 5px;
+    float: right;
+}
+
+
+.bouton_content button{
+    margin-top: 20px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.bouton_content .default button{
+    background-color: #CFD8DC;
+}
+
+.bouton_content  .actived button{
+    background-color: #43A047;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.bouton_content  .actived button:hover{
+    background-color: #E65100;
+    color: white;
+}
+
+.right img{
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width : 769px){
+    .login_page{
+        background-color: #43A047;
+        padding: 20px 0px 0px 0px;
+    }
+    .form_control{
+        margin-top: 10px;
+    }
+    .login_content .right h1{
+        font-weight: 600;
+        color: #E65100;
+        margin: 10px;
+    }
+    .right img{
+        width: 80px;
+        height: 80px;
+    }
+    .form_control label{
+        padding: 0px;
+        float: none;
+    }
+    .bouton_content button{
+        margin: 20px 0px 0px 0px;
+    }
+    .form_control input{
+        background-color: #CFD8DC;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+    }
+}
+
+.form p{
+    margin-top: 10px;
+    
+}
+
+.form a{
+    font-weight: 600;
+    color: #E65100;
+    
+}
+
+.fpass a {
+    text-decoration: none;
+    font-weight: 0;
+    color: black;
+}
+
+.login_link {
+    margin-top: 20px;
+}

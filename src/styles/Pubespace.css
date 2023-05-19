@@ -1,0 +1,15 @@
+.espace_pub{
+    background-color: #43A047;  
+    margin-top: 50px;
+    padding: 20px; 
+    color: white;
+}
+
+.link_reseau{
+    display: flex;
+}
+
+.link_reseau a{
+    color: white;
+    padding: 10px;
+}

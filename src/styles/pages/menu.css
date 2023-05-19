@@ -1,0 +1,13 @@
+.menu_page table{
+    background-color: white;
+}
+
+.menu_page table thead{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.menu_page table tbody {
+    font-size: 13px;
+    font-weight: lighter;
+}

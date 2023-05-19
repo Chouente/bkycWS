@@ -1,0 +1,75 @@
+.contact_page{
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.contact_page h1{
+    color: #E65100;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.contact_infos{
+    background-color: #CFD8DC;
+    margin-top: 50px;
+}
+
+.contact_left{
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact_left h6{
+    color: #43A047;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+.input_style{
+    text-align: start;
+    padding: 10px;
+}
+
+
+
+.action button{
+    float: right;
+    background-color: #43A047;
+    border: none;
+    padding: 10px 50px 10px 50px;
+    color: white;
+    margin: 10px 10px 40px 20px;
+    border-radius: 0.375rem;
+}
+
+
+.contact_right{
+    background-color: #E65100;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    color: white;
+}
+
+.contact_right h6{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.infoContact{
+    text-align: start;
+    display: flex;
+    padding: 10px;
+}
+
+.info_infos{
+    margin-top: 50px;
+}
+
+.infoContact p {
+    padding-left: 20px;
+    font-weight: 600;
+}

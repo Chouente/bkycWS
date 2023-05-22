@@ -15,7 +15,7 @@ const Product = () => {
 
 
     return (
-        <div className='product_page'>
+        <div className='product_page' id='product'>
             <Container>
                 <h1> Our menus </h1>
 
@@ -37,7 +37,7 @@ const Product = () => {
                                 active={activeKey === 2}
                                 onClick={() => setActiveKey(2)}
                                 >
-                                pastry shop
+                                Pastry shop
                                 </CNavLink>
                             </CNavItem>
                             <CNavItem>
@@ -63,7 +63,7 @@ const Product = () => {
                     
                     <div className='menu_content'>
                         <CTabContent>
-                            <CTabPane role="tabpanel" aria-labelledby="home-tab" visible={activeKey === 1}>
+                            <CTabPane role="tabpanel" aria-labelledby="food-tab" visible={activeKey === 1}>
                                 <FoodList/>
                             </CTabPane>
                             <CTabPane role="tabpanel" aria-labelledby="profile-tab" visible={activeKey === 2}>

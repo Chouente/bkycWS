@@ -16,9 +16,9 @@ const footer = () => {
                     </Col>
                     <Col sm={12} md={4}>
                         <div className='middle_part'>
-                            <div className=''><a href='!#'> HOME </a></div>
-                            <div className=''><a href='!#'> OUR MENU </a></div>
-                            <div className=''><a href='!#'> CONTACT US </a></div>
+                            <div className=''><a href='#home'> HOME </a></div>
+                            <div className=''><a href='#product'> OUR MENU </a></div>
+                            <div className=''><a href='#contact'> CONTACT US </a></div>
                         </div>
                     </Col>
                     <Col sm={12} md={4}>

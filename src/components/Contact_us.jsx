@@ -8,7 +8,7 @@ import {MdEmail} from 'react-icons/md'
 
 const Contact_us = () => {
     return (
-        <div className='contact_page'vid='contact'>
+        <div className='contact_page' id='contact'>
             <h1> Contact us </h1>
             <p> Any questions or remarks? Just write us a message </p>
 
@@ -61,13 +61,13 @@ const Contact_us = () => {
                                 <h6> Contact informations </h6>
                                 <div className='info_infos'>
                                     <div className='phone_number infoContact'>
-                                        <BsFillTelephoneFill size={20}/> <p> +7 977 526-73-56 </p>
+                                        <BsFillTelephoneFill size={20}/> <p> +7 966 054-44-48 </p>
                                     </div>
                                     <div className='localisation infoContact'>
                                         <FaMapMarkerAlt size={20}/> <p> Russia/.... </p>
                                     </div>
                                     <div className='localisation infoContact'>
-                                        <MdEmail size={20}/> <p> bkyc@google.com </p>
+                                        <MdEmail size={20}/> <p> mail@vkys.online </p>
                                     </div>
                                 </div>
                             </div>

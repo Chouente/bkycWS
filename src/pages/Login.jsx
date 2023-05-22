@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/pages/login.css'
 import {Row, Col, Container} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
-import logo from '../images/logobkyc.svg'
+import logo from '../images/logo.svg'
 
 const Login = () => {
 

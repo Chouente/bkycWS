@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import {CNavLink, CoreUISignetImg, CNavbar, CNavItem, CContainer, CNavbarBrand,CNavbarToggler,COffcanvas,COffcanvasHeader,COffcanvasTitle,CCloseButton, COffcanvasBody, CNavbarNav} from '@coreui/react' 
-import Logo from '../images/logobkyc.svg'
+import {CNavLink, CNavbar, CNavItem,CFormSelect, CContainer, CNavbarBrand,CNavbarToggler,COffcanvas,COffcanvasHeader,COffcanvasTitle,CCloseButton, COffcanvasBody, CNavbarNav} from '@coreui/react' 
+import Logo from '../images/logo.png'
 import { useNavigate } from 'react-router-dom';
 import '../styles/Navigation.css'
 
@@ -43,19 +43,30 @@ const Navcoreui = () => {
                             <COffcanvasBody>
                                 <CNavbarNav>
                                     <CNavItem>
-                                    <CNavLink href="#" active>
+                                    <CNavLink href="#home" active>
                                         Home
                                     </CNavLink>
                                     </CNavItem>
                                     <CNavItem>
-                                        <CNavLink href="#">About</CNavLink>
+                                        <CNavLink href="#about">About</CNavLink>
                                     </CNavItem>
                                     <CNavItem>
-                                        <CNavLink href="#">Our products</CNavLink>
+                                        <CNavLink href="#product">Our products</CNavLink>
                                     </CNavItem>
                                     <CNavItem>
-                                        <CNavLink href="#"> Contact us </CNavLink>
+                                        <CNavLink href="#contact"> Contact us </CNavLink>
                                     </CNavItem>
+                                    <div className='row'>
+                                        <div className='col-3'></div>
+                                        <div className='col-6'>
+                                            <CFormSelect size="sm" className="mb-3 mt-9" aria-label="Large select example">
+                                                <option value='english'>English</option>
+                                                <option value="french">Frensh</option>
+                                                <option value="russian">Russian</option>
+                                            </CFormSelect>
+                                        </div>
+                                        <div className='col-3'></div>
+                                    </div>
                                     <div className="d-grid gap-2 col-6 mx-auto monCompte">
                                         <button color="primary" onClick={() => navigate("/Login")}>Mon compte</button>
                                     </div>

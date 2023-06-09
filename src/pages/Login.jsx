@@ -36,7 +36,7 @@ const Login = () => {
             return toast.error('your email is not correct')
         }*/}
 
-        Axios.post('http://localhost:5000/api/login', values)
+        Axios.post(`${process.env.REACT_APP_BASE_API_URL}/api/login`, values)
             .then(res => {
             if(res.data.Status === "Success"){
                 accountService.saveToken(res.data.access_token)

@@ -20,14 +20,14 @@ const Message = () => {
    
 
     useEffect(() => {
-        Axios.get('http://localhost:5000/api/contactSee').then((response) => {
+        Axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/contactSee`).then((response) => {
             setMessageList(response.data)
         })
     }, [])
 
     const deleteContact = (id) => {
         if(window.confirm('Are you sure that you wanted to delete this message ?')){
-            Axios.delete(`http://localhost:5000/api/removeContact/${id}`)
+            Axios.delete(`${process.env.REACT_APP_BASE_API_URL}/api/removeContact/${id}`)
             toast.success('Message deleted successfully')
             setTimeout(()=> history('/admin/dashbord'), 500);
         }

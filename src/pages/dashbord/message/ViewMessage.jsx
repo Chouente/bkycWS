@@ -11,7 +11,7 @@ const ViewMessage = () => {
 
         useEffect(() => {
             Axios
-            .get(`http://localhost:5000/api/seeContact/${id}`)
+            .get(`${process.env.REACT_APP_BASE_API_URL}/api/seeContact/${id}`)
             .then((resp) => setUser({ ...resp.data[0]}))
             .catch(err => console.log(err));
         }, [id]);

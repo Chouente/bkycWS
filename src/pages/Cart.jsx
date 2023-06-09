@@ -46,7 +46,7 @@ const Cart = ()=>{
 
             console.log(orders)
 
-                Axios.post('http://localhost:5000/api/addOrder', {
+                Axios.post(`${process.env.REACT_APP_BASE_API_URL}/api/addOrder`, {
                     names,
                     phoneNumber,
                     adresse,

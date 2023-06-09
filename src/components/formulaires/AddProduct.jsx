@@ -28,7 +28,7 @@ const AddProduct = () => {
         if(imageProduct.length==0 || productName.length==0 || productPrice.length==0 || cathProduct.length==0 || description.length==0){
             toast.error('entrer all input to add a new product')
         }else{
-            Axios.post('http://localhost:5000/api/addProduct', formdata)
+            Axios.post(`${process.env.REACT_APP_BASE_API_URL}/api/addProduct`, formdata)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         }

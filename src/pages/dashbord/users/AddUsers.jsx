@@ -16,7 +16,7 @@ const AddUsers = () => {
 
     const onSubmit = (e)=> {
         e.preventDefault();
-        Axios.post('http://localhost:5000/api/register', values)
+        Axios.post(`${process.env.REACT_APP_BASE_API_URL}/api/register`, values)
         .then(res => {
             toast.success('Your user is added successfully')
         })

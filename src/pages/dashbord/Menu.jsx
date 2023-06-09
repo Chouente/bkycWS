@@ -19,7 +19,7 @@ const Menu = () =>{
     const [records, setRecords] = useState(menu_table);
 
     useEffect(() => {
-        Axios.get('http://localhost:5000/api/menuSee').then((response) => {
+        Axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/menuSee`).then((response) => {
             setMenuList(response.data)
         })
     }, [])

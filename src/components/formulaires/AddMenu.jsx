@@ -16,7 +16,7 @@ const AddMenu = () => {
         if(names.length==0){
             toast.error('entrer the name of your new menu')
         }else {
-            Axios.post('http://localhost:5000/api/addMenu', {names})
+            Axios.post(`${process.env.REACT_APP_BASE_API_URL}/api/addMenu`, {names})
             .then(
                 toast.success('you are succeful add a new menu')
             )

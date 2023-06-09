@@ -10,6 +10,13 @@
 
 # production
 /build
+/Backend/node_modules/*
+/Backend/public/images/*
+
+Backend/node_modules/*
+Backend/public/images/*
+
+.env
 
 # misc
 .DS_Store

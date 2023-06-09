@@ -17,7 +17,7 @@ const Produit = () => {
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
-        Axios.get('http://localhost:5000/api/productSee').then((response) => {
+        Axios.get(`${process.env.REACT_APP_BASE_API_URL}/api/productSee`).then((response) => {
             setProductList(response.data)
         })
     }, [])
@@ -25,7 +25,7 @@ const Produit = () => {
 
     const deleteProduct = (id) =>{
         if(window.confirm('are you sure that you wanted to delete this product?')){
-            Axios.delete(`http://localhost:5000/api/removeProduct/${id}`)
+            Axios.delete(`${process.env.REACT_APP_BASE_API_URL}/removeProduct/${id}`)
             toast.success('product delected successfully')
             setTimeout(500);
         }

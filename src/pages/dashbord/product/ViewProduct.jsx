@@ -11,7 +11,7 @@ const ViewProduct = () => {
 
         useEffect(() => {
             Axios
-            .get(`http://localhost:5000/api/seeProduct/${id}`)
+            .get(`${process.env.REACT_APP_BASE_API_URL}/api/seeProduct/${id}`)
             .then((resp) => setProduct({ ...resp.data[0]}))
             .catch(err => console.log(err));
         }, [id]);

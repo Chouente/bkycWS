@@ -11,7 +11,7 @@ const ViewMenu = () => {
 
         useEffect(() => {
             Axios
-            .get(`http://localhost:5000/api/menuSee/${id}`)
+            .get(`${process.env.REACT_APP_BASE_API_URL}/api/menuSee/${id}`)
             .then((resp) => setMenu({ ...resp.data[0]}))
             .catch(err => console.log(err));
         }, [id]);

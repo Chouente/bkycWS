@@ -1,0 +1,159 @@
+.PageContend{
+    margin-top: 7rem;
+}
+
+.PageContend a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.backBouton{
+    text-align: justify;
+    padding-left: 100px;
+}
+
+.backBouton a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    align-items: center;   
+}
+
+.title h1{
+    color: #43A047;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.title hr{
+    color: #43A047;
+    height: 10px;
+    width: 70px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.ProductInfo{
+    margin: 100px;
+    padding: 20px;
+}
+
+.ProductImage img{
+    width: 100%;
+    height: 20rem;
+}
+
+
+
+
+.ProductPrice h3{
+    padding: 10px;
+    font-weight: bold;
+    color: #E65100;
+}
+
+.Addbouton button{
+    background-color: #43A047;
+    color: white;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s ease-out;
+}
+
+.Addbouton button:hover{
+    background-color: #E65100;
+}
+
+.cards img{
+    height: 12rem;
+    width: 100%;
+}
+
+.cards img:hover{
+    border: 2px solid #43A047;
+}
+
+.container a{
+    text-decoration: none;
+    color: black;
+}
+
+.cards h5{
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.cards h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: #E65100;
+}
+
+.Actions {
+    margin-top: 60px;
+    background: url('../../images/repasAfricain.jpg') no-repeat 50%;;
+    height: 40rem;
+    background-size: cover;
+    color: white;
+    padding: 10%;
+}
+
+.Actions p{
+    margin: auto;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.form{
+    margin: 10px;
+}
+.form_control input{
+    padding: 5px;
+}
+
+.Menu{
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+.Menu h1{
+    margin: 2rem;
+    font-weight: bold;
+    text-align: justify;
+    font-size: 25px;
+    color: #E65100;
+}
+
+@media only screen and (max-width: 600px){
+    .backBouton{
+        padding-left: 10px;
+    }
+    .container{
+        padding: 10px;
+    }
+    .ProductInfo{
+        margin: 10px;
+    }
+    .Menu{
+        padding: 2rem;
+    }
+}

@@ -3,8 +3,14 @@ import {CNavLink, CNavbar, CNavItem,CFormSelect, CContainer, CNavbarBrand,CNavba
 import Logo from '../images/logo.png'
 import { useNavigate } from 'react-router-dom';
 import '../styles/Navigation.css'
+import {SlBasket} from 'react-icons/sl'
+import { Link } from 'react-router-dom';
+import { useCart } from 'react-use-cart'
+
 
 const Navcoreui = () => {
+
+    const { totalItems, totalUniqueItems } = useCart();
    
             const [visible, setVisible] = useState(false);
             const navigate = useNavigate();
@@ -12,15 +18,19 @@ const Navcoreui = () => {
             return (
                 <CNavbar colorScheme="light" placement='fixed-top' className='navig'>
                     <CContainer fluid>
-                        <CNavbarBrand href='#'>
+                        <CNavbarBrand href='/'>
                             <img
                                 src={Logo}
                                 alt=""
                                 width="70"
                                 height="50"
                                 className="d-inline-block align-top"
-                            /><h6>bkyc</h6> 
+                            /><h6>Bkyc</h6> 
                         </CNavbarBrand>
+                        <Link to='/cart' className='cart'> 
+                            <SlBasket size={'2rem'} color={'#E65100'}/> 
+                            <span className='bage'> {totalUniqueItems} </span>
+                        </Link>
                         <CNavbarToggler
                             aria-controls="offcanvasNavbar"
                             aria-label="Toggle navigation"
@@ -43,7 +53,7 @@ const Navcoreui = () => {
                             <COffcanvasBody>
                                 <CNavbarNav>
                                     <CNavItem>
-                                    <CNavLink href="#home" active>
+                                    <CNavLink href="/" active>
                                         Home
                                     </CNavLink>
                                     </CNavItem>
@@ -51,10 +61,10 @@ const Navcoreui = () => {
                                         <CNavLink href="#about">About</CNavLink>
                                     </CNavItem>
                                     <CNavItem>
-                                        <CNavLink href="#product">Our products</CNavLink>
+                                        <CNavLink href="/product">Our products</CNavLink>
                                     </CNavItem>
                                     <CNavItem>
-                                        <CNavLink href="#contact"> Contact us </CNavLink>
+                                        <CNavLink href="/#contact"> Contact us </CNavLink>
                                     </CNavItem>
                                     <div className='row'>
                                         <div className='col-3'></div>
@@ -68,7 +78,7 @@ const Navcoreui = () => {
                                         <div className='col-3'></div>
                                     </div>
                                     <div className="d-grid gap-2 col-6 mx-auto monCompte">
-                                        <button color="primary" onClick={() => navigate("/Login")}>Mon compte</button>
+                                        <button color="primary" onClick={() => navigate("/Login")}>S'identifier</button>
                                     </div>
                                     
                                     

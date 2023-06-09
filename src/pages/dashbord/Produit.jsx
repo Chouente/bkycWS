@@ -1,25 +1,44 @@
-import React, {useState} from 'react';
-import { product_table } from '../../data/data';
-import { CModal, CModalHeader, CModalBody,CModalFooter, CModalTitle,} from '@coreui/react'
+import React, {useEffect, useState} from 'react';
 import { CTable, CTableHead, CTableRow,CTableHeaderCell, CTableBody } from '@coreui/react';
 import Button from '../../components/dashbord/Button';
 //import '../../styles/pages/menu.css'
 import {AiFillEdit, AiTwotoneDelete, AiFillEye} from 'react-icons/ai';
 import {GrAdd} from 'react-icons/gr'
 //import '../../styles/input.css'
-import AddProduct from '../../components/formulaires/AddProduct';
+import { Link } from 'react-router-dom';
+import Axios from 'axios';
+import { toast } from 'react-toastify';
+
 
 
 
 const Produit = () => {
 
-    const [visible, setVisible] = useState(false)
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+        Axios.get('http://localhost:5000/api/productSee').then((response) => {
+            setProductList(response.data)
+        })
+    }, [])
+
+
+    const deleteProduct = (id) =>{
+        if(window.confirm('are you sure that you wanted to delete this product?')){
+            Axios.delete(`http://localhost:5000/api/removeProduct/${id}`)
+            toast.success('product delected successfully')
+            setTimeout(500);
+        }
+    }
+
 
     return (
         <div className='m-9 menu_page text-left'> 
             <h3 className='mt-2 font-semibold'> Products </h3>
             <div className='mt-3'>
-                <Button variant='primary' onClick={() => setVisible(!visible)}> <GrAdd color="white"/> &nbsp; add product </Button>
+                <Link to='/admin/products/add'>
+                    <Button variant='primary'> <GrAdd color="white"/> &nbsp; add product </Button>
+                </Link>
             </div>
             
             <div className='shadow-md mt-5 bg-white'>
@@ -39,19 +58,21 @@ const Produit = () => {
                     </CTableHead>
                     <CTableBody>
                             {
-                                product_table.map((item) => {
+                                productList[0] && productList.map((productList) => {
                                     return(
-                                        <CTableRow key={item.id}>
-                                            <CTableHeaderCell> {item.id} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.name} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.type} </CTableHeaderCell>
-                                            <CTableHeaderCell> <img src={item.image} width={50} height={50} alt={item.name} className='rounded'/> </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.price} </CTableHeaderCell>
+                                        <CTableRow key={productList.id}>
+                                            <CTableHeaderCell> {productList.id} </CTableHeaderCell>
+                                            <CTableHeaderCell> {productList.name} </CTableHeaderCell>
+                                            <CTableHeaderCell> {productList.ProductType} </CTableHeaderCell>
+                                            <CTableHeaderCell> <img src={`http://localhost:5000/images/${productList.image}`} alt={productList.name} width={50} height={50}  className='rounded'/> </CTableHeaderCell>
+                                            <CTableHeaderCell> {productList.price} </CTableHeaderCell>
                                             <CTableHeaderCell> 
                                                 <div className='bouton_part'>
                                                     <Button variant='default'><AiFillEdit/></Button>  
+                                                <Link to={`productsView/${productList.id}`}>
                                                     <Button variant='primary'><AiFillEye/></Button>
-                                                    <Button variant='secondary'><AiTwotoneDelete/></Button>
+                                                </Link>
+                                                    <Button variant='secondary' onClick={()=>deleteProduct(productList.id)}><AiTwotoneDelete/></Button>
                                                 </div>
                                                  
                                             </CTableHeaderCell>
@@ -63,20 +84,6 @@ const Produit = () => {
                     
                 </CTable>
             </div>    
-            <CModal visible={visible} onClose={() => setVisible(false)} className='commande'>
-                    <CModalHeader onClose={() => setVisible(false)}>
-                        <CModalTitle>Place an order</CModalTitle>
-                    </CModalHeader>
-                    <CModalBody>
-                        <AddProduct/>
-                    </CModalBody>
-                    <CModalFooter>
-                        <Button variant="default" onClick={() => setVisible(false)}>
-                        Close
-                        </Button>
-                        <Button variant="primary">add product</Button>
-                    </CModalFooter>
-            </CModal>
         </div>
     );
 };

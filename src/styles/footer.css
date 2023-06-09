@@ -2,11 +2,12 @@
     margin-top: 50px;
     padding: 20px;
     background-color: #43A047;
+    color: white;
 }
 
 .footer_part a{
     text-decoration: none;
-    color: white;
+    color: white !important;
 }
 
 .right_part h6{
@@ -18,9 +19,19 @@
     padding: 20px;
 }
 
+.middle_part a{
+    color: white;
+}
+
+
 .icons_social{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
+.logo {
+    background-color: white;
+    padding: 20px;
+}

@@ -16,103 +16,140 @@ import chipse from '../images/chipses.jpeg'
 import passtelle from '../images/passtelle.jpeg'
 import gateau from '../images/gateau.jpeg'
 import beignetSoufle from '../images/beignetsouflés.jpeg'
+import bissap from '../images/bissap.jpeg'
 
 
 
-export const brevagetables = [
+export const Data = [
     {
         id:1,
         image:Kossam,
-        name:'kossam',
+        name:'Kossam',
+        link:'/product/kossam',
+        price:250,
+        cathegorie: 'brevage'
     },
     {
         id:2,
         image:degue,
         name:'Degue',
-    }
-]
-
-export const foodtables = [
+        link:'/product/degue',
+        price:350,
+        cathegorie: 'brevage'
+    },
     {
-        id:1,
+        id:3,
+        image:bissap,
+        name:'Bissap',
+        link:'/product/bissap',
+        price:200,
+        cathegorie: 'brevage'
+    },
+    {
+        id:4,
         name:'poulet yassa',
         image:Pouletyassa,
         price:'12 dir',
-
+        link:'/product/pouletYassa',
+        price:800,
+        cathegorie: 'food'
     },
     {
-        id:2,
+        id:5,
         name:'poulet DG',
         image:PouletDG,
         price: '15 dir',
+        link:'/product/pouletDG',
+        price:800,
+        cathegorie: 'food'
     },
     {
-        id:3,
+        id:6,
         name:'Mafé poulet',
         image:Mafe,
         price:'35 dir',
-    },
-    {
-        id:4,
-        name:'Riz sauce tomate',
-        image:RizTomate,
-        price:'50 dir',
-    },
-    {
-        id:5,
-        name:'Tiebou diene',
-        image:tiebou,
-        price:'50 dir',
-    },
-    {
-        id:6,
-        name:'Sauce pistache',
-        image:sauchePistache,
-        price:'50 dir',
+        link:'/product/mafe',
+        price:800,
+        cathegorie: 'food'
     },
     {
         id:7,
+        name:'Riz sauce tomate',
+        image:RizTomate,
+        link:'/product/rizTomate',
+        price:800,
+        cathegorie: 'food'
+    },
+    {
+        id:8,
+        name:'Tiebou diene',
+        image:tiebou,
+        link:'/product/tieboudiene',
+        price:800,
+        cathegorie: 'food'
+    },
+    {
+        id:9,
+        name:'Sauce pistache',
+        image:sauchePistache,
+        link:'/product/saucePistache',
+        price:850,
+        cathegorie: 'food'
+    },
+    {
+        id:10,
         name:'Met de pistache plantain',
         image:MetPistache,
-        price:'50 dir',
+        link:'/product/metPistache',
+        price:1000,
+        cathegorie: 'food'
     },
-]
-
-export const pastryshoopData = [
     {
-        id:1,
+        id:11,
         name:'Croquette',
         image:croquette,
-        price:'50 dir',
+        link:'/product/croquette',
+        price: 180,
+        cathegorie: 'pastryshoop'
     },
     {
-        id:2,
+        id:12,
         name:'Gateau',
         image:gateau,
-        price:'50 dir',
+        link:'/product/gateau',
+        price:0,
+        cathegorie: 'pastryshoop'
     },
     {
-        id:3,
+        id:13,
         name:'Passtelle',
         image:passtelle,
-        price:'50 dir',
+        link:'/product/passtelle',
+        price:150,
+        cathegorie: 'pastryshoop'
     },
     {
-        id:4,
+        id:14,
         name:'Chipse de plantain',
         image:chipse,
-        price:'50 dir',
+        link:'/product/chipse',
+        price: 250,
+        cathegorie: 'pastryshoop'
     },
     {
-        id:5,
+        id:15,
         name:'Caramel',
         image:caramel,
-        price:'50 dir',
+        link:'/product/caramel',
+        price:130,
+        cathegorie: 'pastryshoop'
     },
     {
-        id:6,
+        id:16,
         name:'beignets soufflés',
         image:beignetSoufle,
-        price:'50 dir',
+        link:'/product/beignet',
+        price: 100,
+        cathegorie: 'pastryshoop'
     },
 ]

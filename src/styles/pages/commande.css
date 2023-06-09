@@ -1,0 +1,23 @@
+.CommandePage{
+    margin: 8rem;
+    align-items: normal;
+    text-align: justify;
+    color: black;
+    font-size: 18px; 
+    padding: 10px;
+}
+
+.CommandePage label{
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 600px){
+    .CommandePage{
+        margin-top: 100px !important;
+        margin: 0px;
+    }
+}
+
+.CommandePage .lastbtn{
+    width: 100%;
+}

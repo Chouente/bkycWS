@@ -1,7 +1,8 @@
 import React from 'react';
 
 //import component of page
-import Navcoreui from '../components/Navcoreui';
+//import Navcoreui from '../components/Navcoreui';
+import Navigation from '../components/Navigation';
 import Home from '../components/Home';
 import Product from '../components/Product';
 import Pubespace from '../components/Pubespace';
@@ -12,7 +13,7 @@ import BackToTupButton from '../components/BackToTupButton';
 const Bkyc = () => {
     return (
         <div>
-            <Navcoreui />
+            <Navigation/>
             <Home />
             <Product/>
             <Pubespace />

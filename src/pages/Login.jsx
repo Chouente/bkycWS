@@ -1,71 +1,124 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useTranslation} from "react-i18next";
 import '../styles/pages/login.css'
-import {Row, Col, Container} from 'react-bootstrap'
+import {Row, Col, Container, Form} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
-import logo from '../images/logo.svg'
+import logo from '../images/logo.svg';
+import { Link } from 'react-router-dom';
+//import Axios from 'axios';
+//import { toast } from 'react-toastify';
+import Axios from 'axios';
+import Navigation from '../components/Navigation';
+import { accountService } from '../_services/account.service';
+
 
 const Login = () => {
-
+    const { t } = useTranslation()
     const navigate = useNavigate();
+    Axios.defaults.withCredentials = true;
+    const [values, setValues]= useState({
+        email: " ",
+        pass: " "
+    })
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        {/* if(email.trim().length===0 || pass.trim().length===0){
+            return toast.error('please enter all form fields')
+        }
+
+        const regExEmail=(value)=>{
+            return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value);
+        }
+
+
+        if(!regExEmail(email)){
+            return toast.error('your email is not correct')
+        }*/}
+
+        Axios.post('http://localhost:5000/api/login', values)
+            .then(res => {
+            if(res.data.Status === "Success"){
+                accountService.saveToken(res.data.access_token)
+                navigate('/admin/dashbord')
+            }else {
+                alert(res.data.Error);
+            }
+        }).then(err => console.log(err))
+
+    }
+    
 
     return (
-        <div className='login_page'>
-            <Container>
-                <div className='login_content'>
-                    <Row>
-                        <Col sm={12} md={5}>
-                            <div className='left'></div>
-                        </Col>
-                        <Col sm={12} md={7}>
-                            <div className='right'>
-                                <img src={logo} alt='logo bkyc' />
-                                <h1> Login </h1>
-                                <div className='form'>
-                                    <div className='form_control'>
-                                        <Row>
-                                            <Col md={6} sm={12}>
-                                                <label> User name : </label>
-                                            </Col>
-                                            <Col md={6} sm={6}>
-                                                <input type='text' name='userName'/>
-                                            </Col>
-                                        </Row>
+        <div>
+            <Navigation/>
+            <div className='login_page'>
+                <Container>
+                    <div className='login_content'>
+                        <Row>
+                            <Col sm={12} md={5}>
+                                <div className='left'></div>
+                            </Col>
+                            <Col sm={12} md={7}>
+                                <div className='right'>
+                                    <img src={logo} alt='logo bkyc' />
+                                    {t('welcome_message')}
+                                    <h1> Login </h1>
+                                    <Form onSubmit={onSubmit}>
+                                        <div className='form_control'>
+                                            <Row>
+                                                <Col md={6} sm={12}>
+                                                    <label> email : </label>
+                                                </Col>
+                                                <Col md={6} sm={6}>
+                                                    <input type='email' name='email' 
+                                                        onChange={(e)=> setValues({...values, email: e.target.value})}
+                                                    />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                        <div className='form_control'>
+                                            <Row>
+                                                <Col md={6} sm={12}>
+                                                    <label> Password : </label>
+                                                </Col>
+                                                <Col md={6} sm={6}>
+                                                    <input type='password' name='pass' autoComplete="on"
+                                                        onChange={(e)=> setValues({...values, pass: e.target.value})}
+                                                    />
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                        <div className='bouton_content'>
+                                            <Row>
+                                                <Col md={6} sm={12}>
+                                                    <div className='default'>
+                                                        <button type='reset'> Cancel </button>
+                                                    </div>
+                                                </Col>
+                                                <Col md={6} sm={12}>
+                                                    <div className='actived'>
+                                                        <button onClick={onSubmit}> Connexion </button>
+                                                    </div>
+                                                </Col>
+                                            </Row>
+                                            
+                                            
+                                        </div>
+                                    </Form>
+                                    <div className='mt-3'>
+                                        <Link to='/register'>
+                                            <h6 className='text-center text-green font-bold'> Register </h6>
+                                        </Link>
                                     </div>
-                                    <div className='form_control'>
-                                        <Row>
-                                            <Col md={6} sm={12}>
-                                                <label> Password : </label>
-                                            </Col>
-                                            <Col md={6} sm={6}>
-                                                <input type='password' name='userName'/>
-                                            </Col>
-                                        </Row>
-                                    </div>
-                                    <div className='bouton_content'>
-                                        <Row>
-                                            <Col md={6} sm={12}>
-                                                <div className='default'>
-                                                    <button> Cancel </button>
-                                                </div>
-                                            </Col>
-                                            <Col md={6} sm={12}>
-                                                <div className='actived'>
-                                                    <button onClick={() => navigate("/admin/dashbord")}> Connexion </button>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                        
-                                        
-                                    </div>
-                                    <p className='fpass'><i><a href='#!'>Forgot password?</a></i>  </p>
-                                    <a href='/register'> Register </a>
                                 </div>
-                            </div>
-                        </Col>
-                    </Row>
-                    
-                </div>
-            </Container>
+                            </Col>
+                        </Row>
+                        
+                        
+                    </div>
+                </Container>
+            </div>
         </div>
     );
 };

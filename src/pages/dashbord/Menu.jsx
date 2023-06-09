@@ -1,20 +1,36 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import { menu_table } from '../../data/data';
 import { CTable, CTableHead, CTableRow,CTableHeaderCell, CTableBody } from '@coreui/react';
-import { CModal, CModalHeader, CModalBody,CModalFooter, CModalTitle, CButton } from '@coreui/react'
 import Button from '../../components/dashbord/Button';
 import '../../styles/pages/menu.css'
 import {AiFillEdit, AiTwotoneDelete, AiFillEye} from 'react-icons/ai';
 import {GrAdd} from 'react-icons/gr'
 import '../../styles/input.css'
-import AddMenu from '../../components/formulaires/AddMenu';
+import { Link } from 'react-router-dom';
+import Axios from 'axios';
+import { toast } from 'react-toastify';
 
 
-export default function Menu(){
 
-    const [visible, setVisible] = useState(false)
 
+const Menu = () =>{
+
+    const [menuList, setMenuList] = useState();
     const [records, setRecords] = useState(menu_table);
+
+    useEffect(() => {
+        Axios.get('http://localhost:5000/api/menuSee').then((response) => {
+            setMenuList(response.data)
+        })
+    }, [])
+
+    const deleteMenu = (id) => {
+        if(window.confirm('are you sure that you wated to delete this menu ?')){
+            Axios.delete(`http://localhost:5000/api/removeMenu/${id}`)
+            toast.success('menu deleted successfully')
+            setTimeout(500)
+        }
+    }
 
     function handleFilter(event){
         const newData = records.filter(row => { 
@@ -30,7 +46,9 @@ export default function Menu(){
         <div className='m-9 menu_page text-left'> 
             <h3 className='mt-2 font-semibold'> Menu </h3>
             <div className='mt-3'>
-                <Button variant='primary' onClick={() => setVisible(!visible)}> <GrAdd color="white"/> &nbsp; add menu </Button>
+                <Link to='/admin/menu/add'>
+                    <Button variant='primary'> <GrAdd color="white"/> &nbsp; add menu </Button>
+                </Link>
             </div>
             
             <div className='shadow-md mt-5 bg-white'>
@@ -47,7 +65,7 @@ export default function Menu(){
                     </CTableHead>
                     <CTableBody>
                             {
-                                menu_table.map(item => {
+                                menuList && menuList.map((item) => {
                                     return(
                                         <CTableRow key={item.id}>
                                             <CTableHeaderCell> {item.id} </CTableHeaderCell>
@@ -55,8 +73,8 @@ export default function Menu(){
                                             <CTableHeaderCell> 
                                                 <div className='bouton_part'>
                                                     <Button variant='default'><AiFillEdit/></Button>  
-                                                    <Button variant='primary'><AiFillEye/></Button>
-                                                    <Button variant='secondary'><AiTwotoneDelete/></Button>
+                                                    <Link to={`menuView/${item.id}`}> <Button variant='primary'><AiFillEye/></Button> </Link>
+                                                    <Button variant='secondary' onClick={()=> deleteMenu(item.id)}><AiTwotoneDelete/></Button>
                                                 </div>
                                                  
                                             </CTableHeaderCell>
@@ -69,22 +87,8 @@ export default function Menu(){
                 </CTable>
             </div>  
 
-
-
-            <CModal visible={visible} onClose={() => setVisible(false)} className='commande'>
-                    <CModalHeader onClose={() => setVisible(false)}>
-                        <CModalTitle>Place an order</CModalTitle>
-                    </CModalHeader>
-                    <CModalBody>
-                        <AddMenu/>
-                    </CModalBody>
-                    <CModalFooter>
-                        <Button variant="default" onClick={() => setVisible(false)}>
-                        Close
-                        </Button>
-                        <Button variant="secondary">Add menu</Button>
-                    </CModalFooter>
-            </CModal>  
         </div>
     )
 }
+
+export default Menu

@@ -23,7 +23,7 @@ const Pubespace = () => {
                         100
                     </h1>
                     <p>
-                        Clients
+                        Customers
                     </p>
                 </Col>
                 <Col sm={12}

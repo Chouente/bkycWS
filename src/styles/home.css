@@ -1,3 +1,7 @@
+.action_part Link{
+    color: white !important;
+}
+
 
 
 .from_control{
@@ -37,3 +41,8 @@
 .bouton_style{
     margin: 45px 10px 10px 10px;
 }
+
+.form input{
+    border: 0.5px solid gray !important;
+}
+

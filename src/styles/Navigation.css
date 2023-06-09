@@ -3,12 +3,12 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-.me-auto{
-    align-items: center;
+a{
+    text-decoration: none;
 }
 
-.navbar-collapse{
-    background-color: chocolate;
+.me-auto{
+    align-items: center;
 }
 
 .navbar-brand{
@@ -104,4 +104,21 @@
 
 .monCompte button:hover{
     background-color: #E65100;
+}
+
+.cart a{
+    text-decoration: none;
+}
+
+.bage{
+    background-color: #43A047;
+    height: 50px;
+    width: 50px;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px;
+    position: relative;
+    top: -40px;
+    left: 15px;
 }

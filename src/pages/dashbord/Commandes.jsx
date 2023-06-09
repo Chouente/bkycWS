@@ -1,14 +1,22 @@
-import React from 'react';
-import { order_table } from '../../data/data';
+import React, {useState, useEffect} from 'react';
 import { CTable, CTableHead, CTableRow,CTableHeaderCell, CTableBody } from '@coreui/react';
 import Button from '../../components/dashbord/Button';
 import '../../styles/pages/menu.css'
 import {AiFillEdit, AiTwotoneDelete, AiFillEye} from 'react-icons/ai';
 import '../../styles/input.css'
+import Axios from 'axios';
 
 
 const Commandes = () => {
 
+    const [ordersList, setOrdersList] = useState([])
+   
+
+    useEffect(() => {
+        Axios.get('http://localhost:5000/api/seeOrders').then((response) => {
+            setOrdersList(response.data)
+        })
+    }, [])
 
 
     return (
@@ -23,29 +31,27 @@ const Commandes = () => {
                     <CTableHead>
                         <CTableRow>
                             <CTableHeaderCell scope="col">id</CTableHeaderCell>
-                            <CTableHeaderCell scope="col">Date com</CTableHeaderCell>
+                            <CTableHeaderCell scope="col">orders Date</CTableHeaderCell>
                             <CTableHeaderCell scope="col">Name client</CTableHeaderCell>
                             <CTableHeaderCell scope="col">Phone number</CTableHeaderCell>
                             <CTableHeaderCell scope="col">Adress</CTableHeaderCell>
                             <CTableHeaderCell scope="col">Order</CTableHeaderCell>
                             <CTableHeaderCell scope="col">Price</CTableHeaderCell>
-                            <CTableHeaderCell scope="col">livr date</CTableHeaderCell>
                             <CTableHeaderCell scope="col"> Operation </CTableHeaderCell>
                         </CTableRow>
                     </CTableHead>
                     <CTableBody>
                             {
-                                order_table.map(item => {
+                                ordersList.map((item) => {
                                     return(
                                         <CTableRow key={item.id}>
                                             <CTableHeaderCell> {item.id} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.orderDate} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.clientName} </CTableHeaderCell>
+                                            <CTableHeaderCell> {item.dateOrders} </CTableHeaderCell>
+                                            <CTableHeaderCell> {item.customerName} </CTableHeaderCell>
                                             <CTableHeaderCell> {item.phoneNumber} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.localisation} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.order} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.price} </CTableHeaderCell>
-                                            <CTableHeaderCell> {item.livrDate} </CTableHeaderCell>
+                                            <CTableHeaderCell> {item.adresse} </CTableHeaderCell>
+                                            <CTableHeaderCell> {item.orderss} </CTableHeaderCell>
+                                            <CTableHeaderCell> {item.totalPrice} </CTableHeaderCell>
                                             <CTableHeaderCell> 
                                                 <div className='bouton_part'>
                                                     <Button variant='default'><AiFillEdit/></Button>  

@@ -15,6 +15,7 @@ import Croquette from '../images/croquetes.jpeg'
 import Gateau from '../images/gateau.jpeg'
 import Pili from '../images/pili.jpg'
 import Kossam from '../images/kossam.jpeg'
+import bissap from '../images/bissap.jpeg'
 
 
 
@@ -272,39 +273,89 @@ export const product_table = [
     },
     {
         id:5,
+        name:'Sauce pistache ',
+        type:'food',
+        image:RizTomate,
+        price:'50 dir',
+    },
+    {
+        id:6,
+        name:'Met de pistache plantain',
+        type:'food',
+        image:RizTomate,
+        price:'50 dir',
+    },
+    {
+        id:7,
         name:'Tiebou diene',
         type:'food',
         image:tiebou,
         price:'50 dir',
     },
     {
-        id:6,
+        id:8,
         name:'croquette',
         type:'pastry shop',
         image:Croquette,
         price:'20 dir'
     },
     {
-        id:7,
+        id:9,
         name:'Gateaux',
         type:'pastry shop',
         image:Gateau,
         price:'30 dir'
     },
     {
-        id:8,
-        name:'pili pili',
+        id:10,
+        name:'pastelle',
         type:'pastry shop',
         image:Pili,
         price:'60 dir'
     },
     {
-        id:9,
+        id:11,
+        name:'Caramel',
+        type:'breverage',
+        image:Kossam,
+        price:'30 dir'
+    },
+    {
+        id:12,
+        name:'chipses',
+        type:'food',
+        image:RizTomate,
+        price:'50 dir',
+    },
+    {
+        id:13,
+        name:'Beignets soufflés',
+        type:'food',
+        image:RizTomate,
+        price:'50 dir',
+    },
+    {
+        id:14,
         name:'Kossam',
         type:'breverage',
         image:Kossam,
         price:'30 dir'
     },
+    {
+        id:15,
+        name:'Degue',
+        type:'breverage',
+        image:Kossam,
+        price:'30 dir'
+    },
+    {
+        id:16,
+        name:'bissap',
+        type:'breverage',
+        image:bissap,
+        price:'30 dir'
+    },
+    
 ]
 
 export const users_table = [

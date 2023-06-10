@@ -18,6 +18,7 @@ import Cart from './pages/Cart'
 import AuthGuard from './_helpers/AuthGuard';
 
 import AdminRouter from './pages/dashbord/AdminRouter';
+import Test from './pages/Test';
 
 function App() {
   const { t } = useTranslation()
@@ -35,6 +36,7 @@ function App() {
         <Route path='/product' element={<Product/>}/>
         <Route path='/cart' element={<Cart/>} />
         <Route path='/commande' element={<Commande />}/>
+        <Route path='/test' element={<Test/>}/>
       </Routes>
     </div>
   );

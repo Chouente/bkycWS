@@ -20,7 +20,7 @@ const db = mysql.createPool({
 });
 
 app.use(cors({
-    origin: ["http://localhost:3000","http://localhost:3000/:id"],
+    origin: ["http://localhost:3000"],
     methods: ["POST", "GET"],
     credentials: true
 }));
@@ -43,6 +43,7 @@ app.get("/api/contactSee", (req, res) => {
         res.send(result)
     })
 });
+
 
 //api pour afficher le message d'un seule user
 app.get("/api/seeContact/:id", (req, res) => {

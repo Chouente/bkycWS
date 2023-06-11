@@ -20,9 +20,9 @@ const db = mysql.createPool({
 });
 
 app.use(cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "https://api.vkys.online"],
     methods: ["POST", "GET"],
-    credentials: true
+    credentials: true,
 }));
 
 app.use(express.json());

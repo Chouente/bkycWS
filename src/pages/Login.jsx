@@ -62,13 +62,12 @@ const Login = () => {
                             <Col sm={12} md={7}>
                                 <div className='right'>
                                     <img src={logo} alt='logo bkyc' />
-                                    {t('welcome_message')}
-                                    <h1> Login </h1>
+                                    <h1>{t('login')} </h1>
                                     <Form onSubmit={onSubmit}>
                                         <div className='form_control'>
                                             <Row>
                                                 <Col md={6} sm={12}>
-                                                    <label> email : </label>
+                                                    <label> {t('email')} : </label>
                                                 </Col>
                                                 <Col md={6} sm={6}>
                                                     <input type='email' name='email' 
@@ -80,7 +79,7 @@ const Login = () => {
                                         <div className='form_control'>
                                             <Row>
                                                 <Col md={6} sm={12}>
-                                                    <label> Password : </label>
+                                                    <label> {t('pass')} : </label>
                                                 </Col>
                                                 <Col md={6} sm={6}>
                                                     <input type='password' name='pass' autoComplete="on"
@@ -93,12 +92,12 @@ const Login = () => {
                                             <Row>
                                                 <Col md={6} sm={12}>
                                                     <div className='default'>
-                                                        <button type='reset'> Cancel </button>
+                                                        <button type='reset'> {t('cancel')} </button>
                                                     </div>
                                                 </Col>
                                                 <Col md={6} sm={12}>
                                                     <div className='actived'>
-                                                        <button onClick={onSubmit}> Connexion </button>
+                                                        <button onClick={onSubmit}>{t('connect')} </button>
                                                     </div>
                                                 </Col>
                                             </Row>
@@ -108,7 +107,7 @@ const Login = () => {
                                     </Form>
                                     <div className='mt-3'>
                                         <Link to='/register'>
-                                            <h6 className='text-center text-green font-bold'> Register </h6>
+                                            <h6 className='text-center text-green font-bold'> {t('register')} </h6>
                                         </Link>
                                     </div>
                                 </div>

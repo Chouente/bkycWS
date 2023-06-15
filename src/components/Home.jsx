@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { Container, Row, Col,} from 'react-bootstrap';
 import { CModal, CModalHeader, CModalBody,CModalFooter, CModalTitle } from '@coreui/react'
 import '../styles/home.css';
+import { useTranslation} from "react-i18next";
 import CommandeClient from './formulaires/CommandeClient';
 import Button from '../components/dashbord/Button'
 import { Link } from 'react-router-dom';
@@ -10,6 +11,8 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [visible, setVisible] = useState(false);
+    const { t } = useTranslation()
+
 
     return (
 

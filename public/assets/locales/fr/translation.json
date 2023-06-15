@@ -1,4 +1,27 @@
 {
     "Welcome_to_React": "Bienvenue a React et react-i18next",
-    "welcome_message": "Salut"
+    "welcome_message": "Salut",
+
+    "lien1": "Acceuil",
+    "lien2": "Produits",
+    "lien3": "Contactez-nous",
+    "langue": "langue",
+    "login": "Connexion",
+    "email": "email",
+    "pass": "mot de passe",
+    "cancel": "Annuler",
+    "connect": "Connexion",
+    "register": "S'enregister",
+    "contactText1": "Des questions ou remarques? Ecrivez-nous un message",
+    "contactTitle": "Envoyez nous un message",
+
+
+    "firstName": "Prénom",
+    "placeF": "entrez votre prénom...",
+    "phoneNumber": "Numéro de téléphone",
+    "placeN": "entrez votre téléphone...",
+    "message": "Méssage",
+    "send":"Envoyez le message",
+    "contactInf": "Coordonnées",
+    "follo": "Suivez-nous sur les réseaux sociaux"
   }

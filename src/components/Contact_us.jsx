@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Row, Col, Container} from 'react-bootstrap'
+import { useTranslation} from "react-i18next";
+
 import { useNavigate } from 'react-router-dom';
 import '../styles/contact.css';
 import { CFormInput, CFormTextarea } from '@coreui/react';
@@ -13,6 +15,8 @@ import { toast } from 'react-toastify';
 import Axios from 'axios';
 
 const Contact_us = () => {
+    const { t } = useTranslation()
+
 
     const [firstName, setFirstName] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -43,15 +47,15 @@ const Contact_us = () => {
 
     return (
         <div className='contact_page' id='contact'>
-            <h1> Contact us </h1>
-            <p> Any questions or remarks? Just write us a message </p>
+            <h1> {t('lien3')} </h1>
+            <p> {t('contactText1')} </p>
 
             <Container>
                 <div className='contact_infos'>
                     <Row>
                         <Col sm={12} md={8}>
                             <div className='contact_left'>
-                                <h6> Send us a message </h6>
+                                <h6> {t('contactTitle')} </h6>
                                 <form>
 
                                     <div className='input_style'>
@@ -60,8 +64,8 @@ const Contact_us = () => {
                                                 <CFormInput
                                                     type="text"
                                                     id="exampleFormControlInput1"
-                                                    label="First Name"
-                                                    placeholder="enter your adress email..."
+                                                    label={t('firstName')}
+                                                    placeholder={t('placeF')}
                                                     name='firstName'
                                                     onChange={(e)=>{setFirstName(e.target.value)}}
                                                 />
@@ -70,8 +74,8 @@ const Contact_us = () => {
                                                 <CFormInput
                                                     type="text"
                                                     id="exampleFormControlInput1"
-                                                    label="Phone Number"
-                                                    placeholder="enter your phone number..."
+                                                    label={t('phoneNumber')}
+                                                    placeholder={t('placeN')}
                                                     name='PhoneNumber'
                                                     onChange={(e)=>{setPhoneNumber(e.target.value)}}
                                                 />
@@ -81,7 +85,7 @@ const Contact_us = () => {
                                     <div className='input_style'>
                                         <CFormTextarea
                                             id="exampleFormControlTextarea1"
-                                            label="Message"
+                                            label={t('message')}
                                             rows={3}
                                             name='Message'
                                             onChange={(e)=>{setMessage(e.target.value)}}
@@ -90,7 +94,7 @@ const Contact_us = () => {
                                     </div>
                                     <div className='action'>
                                         <button onClick={submitContactForm} type={'submit'}>
-                                            Send message
+                                            {t('send')}
                                         </button>
                                     </div>
                                 </form>
@@ -98,7 +102,7 @@ const Contact_us = () => {
                         </Col>
                         <Col sm={12} md={4}>
                             <div className='contact_right'>
-                                <h6> Contact informations </h6>
+                                <h6> {t('contactInf')} </h6>
                                 <div className='info_infos'>
                                     <div className='phone_number infoContact'>
                                         <BsFillTelephoneFill size={20}/> <p> +7 966 054-44-48 </p>

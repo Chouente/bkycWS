@@ -20,9 +20,9 @@ const db = mysql.createPool({
 });
 
 app.use(cors({
-    origin: ["http://localhost:3000", "https://api.vkys.online"],
+    origin: ["http//localhost:3000"],
     methods: ["POST", "GET"],
-    credentials: true,
+    credentials: true
 }));
 
 app.use(express.json());
@@ -43,7 +43,6 @@ app.get("/api/contactSee", (req, res) => {
         res.send(result)
     })
 });
-
 
 //api pour afficher le message d'un seule user
 app.get("/api/seeContact/:id", (req, res) => {

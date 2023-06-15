@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useTranslation} from "react-i18next";
 import { useNavigate } from 'react-router-dom';
 import Logo from '../images/logo.png'
 import i18next from 'i18next';
@@ -12,6 +13,7 @@ import { useCart } from 'react-use-cart'
 
 
 function Navigation() {
+    const { t } = useTranslation()
 
     const langues = [
         {
@@ -60,17 +62,17 @@ function Navigation() {
                         <CNavbarNav className="ms-auto m-1">
                             <CNavItem>
                             <CNavLink href="/" active>
-                                Home
+                            {t('lien1')}
                             </CNavLink>
                             </CNavItem>
                             <CNavItem>
-                            <CNavLink href="product">Products</CNavLink>
+                            <CNavLink href="product">{t('lien2')}</CNavLink>
                             </CNavItem>
                             <CNavItem>
-                            <CNavLink href="#contact">Contact_us</CNavLink>
+                            <CNavLink href="#contact">{t('lien3')}</CNavLink>
                             </CNavItem>
                             <div className='m-1'>
-                                <DropdownButton variant='success' id="dropdown-autoclose-true" title='language'>
+                                <DropdownButton variant='success' id="dropdown-autoclose-true" title={t('langue')}>
                                     {langues.map(({code, name, contry_code}) => (
                                         <button className='dropdown-item' onClick={()=>i18next.changeLanguage(code)} key={contry_code}>
                                             <span className={`flag-icon flag-icon-${contry_code} mx-2`}> </span>

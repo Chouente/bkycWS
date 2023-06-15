@@ -15,7 +15,6 @@ import { accountService } from '../_services/account.service';
 const Login = () => {
     const { t } = useTranslation()
     const navigate = useNavigate();
-    Axios.defaults.withCredentials = true;
     const [values, setValues]= useState({
         email: " ",
         pass: " "
